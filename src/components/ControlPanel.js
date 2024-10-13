@@ -7,12 +7,12 @@ const ControlPanel = () => {
 
     // Fetch SMS data from the backend
     useEffect(() => {
-        axios.get('https://your-backend.herokuapp.com/api/sms')
+        axios.get('https://parental-control-backend-5a638660279f.herokuapp.com/api/sms')
             .then(response => setSmsData(response.data))
             .catch(error => console.error('Error fetching SMS data:', error));
 
         // Fetch Notification data from the backend
-        axios.get('https://your-backend.herokuapp.com/api/notifications')
+        axios.get('https://parental-control-backend-5a638660279f.herokuapp.com/api/notifications')
             .then(response => setNotificationData(response.data))
             .catch(error => console.error('Error fetching Notification data:', error));
     }, []);
