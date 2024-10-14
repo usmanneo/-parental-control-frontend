@@ -3,26 +3,33 @@ import React, { useEffect, useState } from 'react';
 const ControlPanel = () => {
   const [smsData, setSmsData] = useState([]);
   const [notificationData, setNotificationData] = useState([]);
+  const backendUrl = process.env.REACT_APP_BACKEND_URL || 'https://parental-control-backend-5a638660279f.herokuapp.com';
 
   // Fetch SMS data
   useEffect(() => {
-    fetch('https://parental-control-backend-5a638660279f.herokuapp.com/api/sms')
-      .then((response) => response.json())
-      .then((data) => {
-        setSmsData(data);  // Save SMS data to state
+    fetch(`${backendUrl}/api/sms`)
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error('Failed to fetch SMS data');
+        }
+        return response.json();
       })
+      .then((data) => setSmsData(data))
       .catch((error) => console.error('Error fetching SMS data:', error));
-  }, []);
+  }, [backendUrl]);
 
   // Fetch Notification data
   useEffect(() => {
-    fetch('https://parental-control-backend-5a638660279f.herokuapp.com/api/notifications')
-      .then((response) => response.json())
-      .then((data) => {
-        setNotificationData(data);  // Save Notification data to state
+    fetch(`${backendUrl}/api/notifications`)
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error('Failed to fetch notification data');
+        }
+        return response.json();
       })
+      .then((data) => setNotificationData(data))
       .catch((error) => console.error('Error fetching Notification data:', error));
-  }, []);
+  }, [backendUrl]);
 
   return (
     <div>
