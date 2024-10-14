@@ -1,38 +1,42 @@
 {
   "name": "parental-control-frontend",
   "version": "1.0.0",
-  "private": true,
-  "dependencies": {
-    "axios": "^0.24.0",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "react-scripts": "4.0.3",
-    "web-vitals": "^1.1.2"
-  },
+  "description": "Vue.js frontend for parental control panel",
+  "main": "index.js",
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint"
+  },
+  "dependencies": {
+    "core-js": "^3.8.3",
+    "vue": "^3.0.0"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "~4.5.0",
+    "@vue/cli-plugin-eslint": "~4.5.0",
+    "@vue/cli-service": "~4.5.0",
+    "@vue/compiler-sfc": "^3.0.0",
+    "eslint": "^6.7.2",
+    "eslint-plugin-vue": "^7.0.0"
   },
   "eslintConfig": {
+    "root": true,
+    "env": {
+      "node": true
+    },
     "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
+      "plugin:vue/vue3-essential",
+      "eslint:recommended"
     ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+    "parserOptions": {
+      "parser": "babel-eslint"
+    },
+    "rules": {}
   },
-  "author": "Your Name",
-  "license": "ISC"
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
+  ]
 }
