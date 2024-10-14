@@ -15,12 +15,12 @@
   },
   "devDependencies": {
     "@babel/core": "^7.20.0",
-    "@babel/eslint-parser": "^7.20.0",  // Replace babel-eslint with @babel/eslint-parser
+    "@babel/eslint-parser": "^7.20.0",  
     "@vue/cli-plugin-babel": "~5.0.0",
     "@vue/cli-plugin-eslint": "~5.0.0",
     "@vue/cli-service": "~5.0.0",
-    "eslint": "^7.32.0", // Update ESLint to a version that works with @babel/eslint-parser
-    "eslint-plugin-vue": "^7.20.0", // Plugin for Vue linting
+    "eslint": "^7.32.0", 
+    "eslint-plugin-vue": "^7.20.0",
     "eslint-loader": "^4.0.2",
     "vue-loader": "^16.0.0",
     "vue-template-compiler": "^2.6.11"
@@ -35,7 +35,7 @@
       "eslint:recommended"
     ],
     "parserOptions": {
-      "parser": "@babel/eslint-parser",  // Use modern parser
+      "parser": "@babel/eslint-parser",  
       "requireConfigFile": false
     },
     "rules": {
