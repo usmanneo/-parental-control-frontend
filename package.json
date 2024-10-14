@@ -11,20 +11,18 @@
   "dependencies": {
     "core-js": "^3.23.1",
     "vue": "^3.2.0",
-    "vue-router": "^4.0.0"  // Add vue-router if not present
+    "vue-router": "^4.0.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.15.0",
-    "@babel/eslint-parser": "^7.15.0", // Modern replacement for babel-eslint
+    "@babel/core": "^7.20.0",
+    "@babel/eslint-parser": "^7.20.0",  // Replace babel-eslint with @babel/eslint-parser
     "@vue/cli-plugin-babel": "~5.0.0",
     "@vue/cli-plugin-eslint": "~5.0.0",
     "@vue/cli-service": "~5.0.0",
-    "babel-eslint": "^10.1.0",  // Ensure babel-eslint is included
-    "eslint": "^6.8.0",
-    "eslint-plugin-vue": "^7.0.0",
-    "vue-eslint-parser": "^8.0.0", // Ensure vue-eslint-parser is included
-    "eslint-loader": "^4.0.0", // If using Webpack with ESLint loader
-    "vue-loader": "^16.2.0",   // Required for Vue single file components
+    "eslint": "^7.32.0", // Update ESLint to a version that works with @babel/eslint-parser
+    "eslint-plugin-vue": "^7.20.0", // Plugin for Vue linting
+    "eslint-loader": "^4.0.2",
+    "vue-loader": "^16.0.0",
     "vue-template-compiler": "^2.6.11"
   },
   "eslintConfig": {
@@ -37,7 +35,8 @@
       "eslint:recommended"
     ],
     "parserOptions": {
-      "parser": "babel-eslint"  // Specify babel-eslint as parser
+      "parser": "@babel/eslint-parser",  // Use modern parser
+      "requireConfigFile": false
     },
     "rules": {
       "no-console": "off",
@@ -50,7 +49,7 @@
     "not dead"
   ],
   "engines": {
-    "node": ">=14.0.0",  // You can specify required Node version
+    "node": ">=14.0.0",
     "npm": ">=6.0.0"
   }
 }
